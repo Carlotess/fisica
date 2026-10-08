@@ -1,0 +1,21 @@
+{
+  "name": "fisica",
+  "version": "1.0.0",
+  "description": "Resuelve problemas de física de cualquier área evitando errores de lectura, de modelo y de cuenta: amplía y describe las figuras antes de resolver, verifica el resultado y cierra siempre con una lista compacta de las suposiciones usadas, ordenadas por riesgo, para detectar rápido si alguna es falsa.",
+  "author": {
+    "name": "Carlotess",
+    "url": "https://github.com/Carlotess"
+  },
+  "license": "MIT",
+  "keywords": [
+    "fisica",
+    "physics",
+    "educacion",
+    "problemas",
+    "poleas",
+    "circuitos",
+    "estudiantes"
+  ],
+  "homepage": "https://github.com/Carlotess/fisica",
+  "repository": "https://github.com/Carlotess/fisica"
+}
