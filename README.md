@@ -1,5 +1,7 @@
 # Física sin errores ocultos — plugin para Claude
 
+> **English summary:** A Claude plugin that solves physics problems in any area (mechanics, circuits, thermodynamics, optics…) while avoiding hidden-assumption errors. It enlarges and describes figures before solving, checks units and limiting cases, and always ends with a short, risk-ordered list of every assumption used, so you can spot a wrong one at a glance. Claude answers in your language.
+
 Un plugin con una skill que hace que Claude resuelva problemas de física de **cualquier área** (mecánica, energía, fluidos, termodinámica, electricidad, circuitos, magnetismo, ondas, óptica, física moderna) con un protocolo pensado para evitar el error más común: **los supuestos silenciosos**.
 
 ## El problema que resuelve
@@ -59,6 +61,18 @@ skills/fisica/SKILL.md            protocolo de resolución
 skills/fisica/scripts/ampliar.py  amplía y recorta figuras (requiere Pillow)
 skills/fisica/references/errores-comunes.md  trampas típicas por área
 ```
+
+## Qué ejecuta y qué datos usa
+
+- La skill es principalmente un conjunto de instrucciones (Markdown) que Claude sigue al resolver problemas de física.
+- Incluye un único script, `skills/fisica/scripts/ampliar.py`, que Claude ejecuta localmente en su entorno de código para ampliar y recortar la imagen de un problema. Usa solo Python y la librería Pillow.
+- El script no hace conexiones de red, no envía datos a ningún servicio externo y no lee archivos fuera de la imagen indicada. Solo guarda la imagen ampliada en el directorio de trabajo.
+- No usa conectores, APIs ni credenciales.
+
+## Limitaciones
+
+- El protocolo reduce errores, pero no los elimina: la lectura de figuras de muy baja resolución puede seguir siendo ambigua. Por eso la skill marca esas interpretaciones con ⚠️ para que las revises.
+- Por defecto usa convenciones habituales en cursos de física en español (por ejemplo sen 37° = 3/5, sen 53° = 4/5). Si tu curso usa otras, indicáselo a Claude.
 
 ## Contribuir
 
